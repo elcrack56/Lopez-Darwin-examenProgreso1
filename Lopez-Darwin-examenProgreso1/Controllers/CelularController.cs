@@ -19,13 +19,13 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             _context = context;
         }
 
-        // GET: Celulars
+        // GET: Celular
         public async Task<IActionResult> Index()
         {
             return View(await _context.Celular.ToListAsync());
         }
 
-        // GET: Celulars/Details/5
+        // GET: Celular/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -43,13 +43,13 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(celular);
         }
 
-        // GET: Celulars/Create
+        // GET: Celular/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Celulars/Create
+        // POST: Celular/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,7 +65,7 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(celular);
         }
 
-        // GET: Celulars/Edit/5
+        // GET: Celular/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -81,7 +81,7 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(celular);
         }
 
-        // POST: Celulars/Edit/5
+        // POST: Celular/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -116,7 +116,7 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(celular);
         }
 
-        // GET: Celulars/Delete/5
+        // GET: Celular/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -134,7 +134,7 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(celular);
         }
 
-        // POST: Celulars/Delete/5
+        // POST: Celular/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

@@ -19,14 +19,14 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             _context = context;
         }
 
-        // GET: Lopezs
+        // GET: Lopez
         public async Task<IActionResult> Index()
         {
             var lopez_Darwin_examenProgreso1Context = _context.Lopez.Include(l => l.celulares);
             return View(await lopez_Darwin_examenProgreso1Context.ToListAsync());
         }
 
-        // GET: Lopezs/Details/5
+        // GET: Lopez/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(lopez);
         }
 
-        // GET: Lopezs/Create
+        // GET: Lopez/Create
         public IActionResult Create()
         {
-            ViewData["celularesmodelo"] = new SelectList(_context.Set<Celular>(), "modelo", "modelo");
+            ViewData["celularesmodelo"] = new SelectList(_context.Celular, "modelo", "modelo");
             return View();
         }
 
-        // POST: Lopezs/Create
+        // POST: Lopez/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -65,11 +65,11 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["celularesmodelo"] = new SelectList(_context.Set<Celular>(), "modelo", "modelo", lopez.celularesmodelo);
+            ViewData["celularesmodelo"] = new SelectList(_context.Celular, "modelo", "modelo", lopez.celularesmodelo);
             return View(lopez);
         }
 
-        // GET: Lopezs/Edit/5
+        // GET: Lopez/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -82,11 +82,11 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             {
                 return NotFound();
             }
-            ViewData["celularesmodelo"] = new SelectList(_context.Set<Celular>(), "modelo", "modelo", lopez.celularesmodelo);
+            ViewData["celularesmodelo"] = new SelectList(_context.Celular, "modelo", "modelo", lopez.celularesmodelo);
             return View(lopez);
         }
 
-        // POST: Lopezs/Edit/5
+        // POST: Lopez/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,11 +118,11 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["celularesmodelo"] = new SelectList(_context.Set<Celular>(), "modelo", "modelo", lopez.celularesmodelo);
+            ViewData["celularesmodelo"] = new SelectList(_context.Celular, "modelo", "modelo", lopez.celularesmodelo);
             return View(lopez);
         }
 
-        // GET: Lopezs/Delete/5
+        // GET: Lopez/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace Lopez_Darwin_examenProgreso1.Controllers
             return View(lopez);
         }
 
-        // POST: Lopezs/Delete/5
+        // POST: Lopez/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

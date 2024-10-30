@@ -21,8 +21,8 @@ body {
   margin-bottom: 60px;
 }
 
-image {
-    background-image: url('file:///C:\Users\laboratorio\Desktop\download.jpg');
+.imagen-meme {
+    background-image: url('../imagen/sddefault.jpg');
     max-width: 300px;
     max-height: 300px;
 }
