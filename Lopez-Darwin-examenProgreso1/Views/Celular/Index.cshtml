@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Lopez_Darwin_examenProgreso1.Models.Celular>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Celular";
 }
 
-<h1>Index</h1>
+<h1>Celular</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Añadir un nuevo celular</a>
 </p>
 <table class="table">
     <thead>
@@ -15,11 +15,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Id)
             </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.año)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo)
             </th>
             <th></th>
         </tr>
@@ -36,6 +40,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.precio)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.modelo)
+                </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.modelo">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.modelo">Details</a> |
