@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Lopez_Darwin_examenProgreso1.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<Lopez_Darwin_examenProgreso1Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Lopez_Darwin_examenProgreso1Context") ?? throw new InvalidOperationException("Connection string 'Lopez_Darwin_examenProgreso1Context' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
